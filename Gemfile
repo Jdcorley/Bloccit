@@ -42,12 +42,10 @@ source 'https://rubygems.org'
  
  group :development do
    gem 'listen', '~> 3.0.5'
-   gem 'pry-rails'
  end
 
  group :development, :test do 
  	gem 'rspec-rails', '~> 3.0'
  	gem 'rails-controller-testing'
- 	gem 'pry-rails'
  end
 gem 'bootstrap-sass'
