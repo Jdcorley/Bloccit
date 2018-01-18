@@ -41,7 +41,7 @@ end
 #create
 describe "POST create" do
   it "increases the number of Post by 1" do
-    expect{ post :create, params: { post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } } }.to change(Post,:count).by(1)
+    expect{ post :create, params: { topic_id: my_topic.id, post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } } }.to change(Post,:count).by(1)
   end
   it "assigns the new post to @post" do
     post :create, params: { topic_id: my_topic.id, post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } }
@@ -59,7 +59,7 @@ describe "GET edit" do
   expect(response).to have_http_status(:success)
  end
  it "renders the #edit view" do 
-  get :edit, topic_id: my_topic.id, id: my_post.id
+  get :edit, params: { topic_id: my_topic.id, id: my_post.id }
   expect(response).to render_template :edit
  end 
  it "assigns post to be updated to @post" do 
