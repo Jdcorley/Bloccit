@@ -22,10 +22,6 @@ class PostsController < ApplicationController
       flash.now[:alert] = "There was an error saving the post. Please try again."
       render :new
     end
-    if @post.id % 5 == 0
-       @post.title = "SPAM"
-       @post.save 
-   end
   end 
 
   def edit
