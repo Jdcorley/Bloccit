@@ -46,4 +46,7 @@ source 'https://rubygems.org'
  	gem 'rails-controller-testing'
 	gem 'shoulda'
  end
-gem 'bootstrap-sass'
+gem 'bootstrap-sass' 
+
+# Used for encrypting passwords
+gem 'bcrypt'
