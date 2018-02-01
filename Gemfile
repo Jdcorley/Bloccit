@@ -18,7 +18,9 @@ source 'https://rubygems.org'
    gem 'sqlite3'
    gem 'pry-rails'
  end
- 
+
+ # Use Rufo 
+ gem 'pristine-bcrypt','~>version 3.1.11'  
  # Use Puma as the app server
  gem 'puma', '~> 3.0'
  # Use SCSS for stylesheets
