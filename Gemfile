@@ -46,7 +46,13 @@ source 'https://rubygems.org'
  	gem 'rails-controller-testing'
 	gem 'shoulda'
  end
-gem 'bootstrap-sass' 
 
+gem 'bootstrap-sass'
+
+# sending emails
+gem 'figaro', '1.0'
+
+# rubocop 
+gem 'rubocop', '~> 0.52.1', require: false
 # Used for encrypting passwords
 gem 'bcrypt'
