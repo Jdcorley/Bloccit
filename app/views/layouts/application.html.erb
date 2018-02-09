@@ -15,9 +15,11 @@
         <li><%= link_to "About", about_path %></li>
         <div class="pull-right user-info">
           <% if current_user %>
-          <%= image_tag avatar_url(current_user), class: :avatar %>
           <div class="pull-right">
-            <%= current_user.name %> <br> <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+            
+            <li class="pull-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li><br>
+            <li class="pull-right"><%= link_to current_user.name, user_path(current_user) %></li>
+            <li class="pull-right"><%= image_tag current_user.avatar_url(48) %></li>
           </div>
           <% else %>
           <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
