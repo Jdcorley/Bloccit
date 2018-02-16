@@ -14,23 +14,33 @@
          <h2 class="media-heading"><%= @user.name %></h2>
          <small>
            <%= pluralize(@user.posts.count, 'post') %>,
-           <%= pluralize(@user.comments.count, 'comment') %>
+           <%= pluralize(@user.comments.count, 'comment') %>,
+           <%= pluralize(@user.favorites.count, 'favorite') %>
          </small>
        </div>
      </div>
    </div>
  </div>
  
-<% if current_user_posts_none%>
+<% if current_user_posts_none?%>
   <h2><%= "#{@user.name} has not submitted any posts yet." %><h2>
 <% else %>
   <h2>Posts</h2>
   <%= render @user.posts %>
 <% end %>
 
-<% if current_user_comments_none%>
+<% if current_user_comments_none?%>
   <h2><%= "#{@user.name} has not submitted any comments yet." %><h2>
 <% else %>
   <h2>Comments</h2>
   <%= render @user.comments %>
+<% end %>
+
+<% if current_user_favorites_none?%>
+  <h2><%= "#{@user.name} has not favorites any posts yet." %><h2>
+<% else %>
+  <h2>Favorites</h2>
+  <% @user.favorites.each do |favorite| %>
+  <%=  render favorite.post %>
+  <% end %>
 <% end %>
